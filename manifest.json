@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Exam Answer",
+  "version": "2.0",
+  "description": "司法考试答案显示",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "web_accessible_resources": [{
+    "resources": ["converted.json"],
+    "matches": ["<all_urls>"]
+  }]
+} 
